@@ -5,7 +5,7 @@
 
 #variables to grab various system states
 freeRam=$(free -h | awk 'NR==2{print $4}' | sed 's/[^0-9]*//g')
-loadAve=$(uptime | awk '{print $6" "$7" "$8" "$9" "$10}')
+loadAve=$(uptime | awk '{print $7" "$8" "$9" "$10" "$11}')
 totUsrs=$(cat /etc/passwd | wc -l)
 actUsrs=$(who | wc -l)
 totShells=$(cat /etc/passwd | awk -F ":" '{print $7}' | awk '{for(i = 1; i <= NF; i++) {a[$i":"]++}} END {for(k in a) {print k, a[k]}}')
